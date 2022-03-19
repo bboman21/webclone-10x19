@@ -18,42 +18,62 @@ body {
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 5fr 1fr;
   gap: 1px;
+
   & > * {
     background-color: white;
     color: $color01;
     font-size: 2rem;
     font-weight: 600;
   }
-}
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.number-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  gap: 1px;
-  background-color: $color01;
-
-  .number {
+  .menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    transition: color 0.3s linear, background-color 0.3s linear;
-    &:hover {
-      background-color: $color01;
-      color: white;
+  }
+  .number-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px;
+    background-color: $color01;
+
+    .number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      transition: color 0.3s linear, background-color 0.3s linear;
+      &:hover {
+        background-color: $color01;
+        color: white;
+      }
+    }
+  }
+  .images {
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover;
+  }
+
+  .scrolling__text {
+    grid-column-start: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.2rem;
+    span {
+      display: block;
+      animation: scrollText 3s linear infinite forwards;
     }
   }
 }
-.scroll-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  font-size: 1.2rem;
-  text-align: center;
+@keyframes scrollText {
+  0% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+  100% {
+    transform: translateX(-150px);
+  }
 }

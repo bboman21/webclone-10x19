@@ -166,38 +166,54 @@ body > * {
   font-size: 2rem;
   font-weight: 600;
 }
-
-.menu {
+body .menu {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.number-list {
+body .number-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
   gap: 1px;
   background-color: #af7732;
 }
-.number-list .number {
+body .number-list .number {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   transition: color 0.3s linear, background-color 0.3s linear;
 }
-.number-list .number:hover {
+body .number-list .number:hover {
   background-color: #af7732;
   color: white;
 }
-
-.scroll-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body .images {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+}
+body .scrolling__text {
+  grid-column-start: 2;
+  white-space: nowrap;
+  overflow: hidden;
   font-size: 1.2rem;
-  text-align: center;
+}
+body .scrolling__text span {
+  display: block;
+  animation: scrollText 3s linear infinite forwards;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+  100% {
+    transform: translateX(-150px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
